@@ -136,11 +136,6 @@ class Directory extends PureComponent {
             <RadioButton name='order' value='active' label={intl.formatMessage(messages.recentlyActive)} checked={order === 'active'} onChange={this.handleChangeOrder} />
             <RadioButton name='order' value='new' label={intl.formatMessage(messages.newArrivals)} checked={order === 'new'} onChange={this.handleChangeOrder} />
           </div>
-
-          <div className='filter-form__column' role='group'>
-            <RadioButton name='local' value='1' label={intl.formatMessage(messages.local, { domain })} checked={local} onChange={this.handleChangeLocal} />
-            <RadioButton name='local' value='0' label={intl.formatMessage(messages.federated)} checked={!local} onChange={this.handleChangeLocal} />
-          </div>
         </div>
 
         <div className='directory__list'>

@@ -41,9 +41,6 @@ class ServerBanner extends PureComponent {
 
     return (
       <div className='server-banner'>
-        <div className='server-banner__introduction'>
-          <FormattedMessage id='server_banner.introduction' defaultMessage='{domain} is part of the decentralized social network powered by {mastodon}.' values={{ domain: <strong>{domain}</strong>, mastodon: <a href='https://joinmastodon.org' target='_blank'>Mastodon</a> }} />
-        </div>
 
         <ServerHeroImage blurhash={server.getIn(['thumbnail', 'blurhash'])} src={server.getIn(['thumbnail', 'url'])} className='server-banner__hero' />
 
@@ -61,14 +58,6 @@ class ServerBanner extends PureComponent {
 
         <div className='server-banner__meta'>
           <div className='server-banner__meta__column'>
-            <h4><FormattedMessage id='server_banner.administered_by' defaultMessage='Administered by:' /></h4>
-
-            <Account id={server.getIn(['contact', 'account', 'id'])} size={36} minimal />
-          </div>
-
-          <div className='server-banner__meta__column'>
-            <h4><FormattedMessage id='server_banner.server_stats' defaultMessage='Server stats:' /></h4>
-
             {isLoading ? (
               <>
                 <strong className='server-banner__number'><Skeleton width='10ch' /></strong>
@@ -78,7 +67,7 @@ class ServerBanner extends PureComponent {
             ) : (
               <>
                 <strong className='server-banner__number'><ShortNumber value={server.getIn(['usage', 'users', 'active_month'])} /></strong>
-                <br />
+                {" "}
                 <span className='server-banner__number-label' title={intl.formatMessage(messages.aboutActiveUsers)}><FormattedMessage id='server_banner.active_users' defaultMessage='active users' /></span>
               </>
             )}

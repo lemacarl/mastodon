@@ -48,7 +48,7 @@ const Onboarding = () => {
           <Route path='/start' exact>
             <div className='scrollable privacy-policy'>
               <div className='column-title'>
-                <img src={illustration} alt='' className='onboarding__illustration' />
+                {/* <img src={illustration} alt='' className='onboarding__illustration' /> */}
                 <h3><FormattedMessage id='onboarding.start.title' defaultMessage="You've made it!" /></h3>
                 <p><FormattedMessage id='onboarding.start.lead' defaultMessage="Your new Mastodon account is ready to go. Here's how you can make the most of it:" /></p>
               </div>
